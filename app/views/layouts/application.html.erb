@@ -4,12 +4,22 @@
     <title>RailsSimpleAirbnb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light justify-content-between mb-3">
+      <%= link_to "Simple Airbnb", flats_path, class: "navbar-brand" %>
+      <div class="d-flex">
+        <form class="form-inline mr-3">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <%= link_to "Add Flat", new_flat_path, class: "btn btn-outline-primary" %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
